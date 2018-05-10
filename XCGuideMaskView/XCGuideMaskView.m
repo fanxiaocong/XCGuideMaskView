@@ -477,6 +477,11 @@ typedef NS_ENUM(NSInteger, XCGuideMaskItemRegion)
     } completion:^(BOOL finished) {
         
         [self removeFromSuperview];
+        
+        /// 消失后的回调
+        if (self.dismissHandle) {
+            self.dismissHandle();
+        }
     }];
 }
 

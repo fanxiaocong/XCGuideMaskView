@@ -64,7 +64,7 @@
  */
 - (CGFloat)guideMaskView:(XCGuideMaskView *)guideMaskView spaceForItemAtIndex:(NSInteger)index;
 /**
- *  每个 item 的文字与左右边框间的距离：默认为 50
+ *  每个 item 的文字与左右边框间的距离：默认为 50（注意：如果文字的宽度小于当前可视区域的宽度，则会相对于箭头图片居中对齐）
  */
 - (CGFloat)guideMaskView:(XCGuideMaskView *)guideMaskView horizontalInsetForDescriptionAtIndex:(NSInteger)index;
 
@@ -86,6 +86,9 @@
 @property (weak, nonatomic) id<XCGuideMaskViewDataSource> dataSource;
 /** 👀 布局 👀 */
 @property (weak, nonatomic) id<XCGuideMaskViewLayout> layout;
+
+/// 消失完成的回调
+@property (copy, nonatomic) void(^dismissHandle)(void);
 
 /**
  *  根据一个数据源，来创建一个 guideView

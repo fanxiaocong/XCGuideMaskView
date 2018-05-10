@@ -31,6 +31,9 @@
 {
     XCGuideMaskView *maskView = [[XCGuideMaskView alloc] initWithDatasource:self];
     maskView.layout = self;
+    maskView.dismissHandle = ^{
+        NSLog(@"消失了");
+    };
     [maskView show];
 }
 
@@ -48,7 +51,7 @@
 
 - (NSString *)guideMaskView:(XCGuideMaskView *)guideMaskView descriptionForItemAtIndex:(NSInteger)index
 {
-    return [NSString stringWithFormat:@"这是第 %zi 个视图的描述", index];
+    return [NSString stringWithFormat:@"这是第 %zi 个视图的描述图的描述图的描述图的描述图的描述图的描述图的描述图的描述图的描述图的描述图的描述", index];
 }
 
 - (UIColor *)guideMaskView:(XCGuideMaskView *)guideMaskView colorForDescriptionAtIndex:(NSInteger)index
